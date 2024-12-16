@@ -1,9 +1,12 @@
 #custom function
-  # Open the 'todos.txt' file in read mode to read existing to-do items.
+#Constant 
+FILEPATH = "todos.txt"
+
+# Open the 'todos.txt' file in read mode to read existing to-do items.
 """file variable hold the file object when the open() is call. when the file is open,
 it allow other method such as read and write for me to manipulate my txt file. 
 """
-def get_todos(file_path="todos.txt"):
+def get_todos(file_path=FILEPATH):
     """
     Reads all the lines from a specified file and returns them as a list.
 
@@ -19,7 +22,7 @@ def get_todos(file_path="todos.txt"):
     return todos_list_local
 
 
-def write_todos(todos_local, file_path="todos.txt"):
+def write_todos(todos_local, file_path=FILEPATH):
     """
     Writes a list of todos to a specified text file.
 
@@ -33,3 +36,8 @@ def write_todos(todos_local, file_path="todos.txt"):
     with open(file_path, 'w') as file:
         # Write each todo item from the list into the file.
         file.writelines(todos_local)
+        
+if __name__ == "__main__":
+    print("Hello")
+    print(get_todos())
+    
